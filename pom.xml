@@ -57,26 +57,45 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
 <!--            <plugin>-->
 <!--                <groupId>org.codehaus.mojo</groupId>-->
 <!--                <artifactId>exec-maven-plugin</artifactId>-->
-<!--                <version>1.6.0</version>-->
+<!--                <version>1.5.0</version>-->
 <!--                <executions>-->
 <!--                    <execution>-->
-<!--                        <phase>validate</phase>-->
+<!--                        <id>exec-npm-install</id>-->
+<!--                        <phase>generate-sources</phase>-->
+<!--                        <configuration>-->
+<!--                            <workingDirectory>src/main/resources/iscs-fe</workingDirectory>-->
+<!--                            <executable>npm</executable>-->
+<!--                            <arguments>-->
+<!--                                <argument>install</argument>-->
+<!--                            </arguments>-->
+<!--                        </configuration>-->
+<!--                        <goals>-->
+<!--                            <goal>exec</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>exec-npm-ng-build</id>-->
+<!--                        <phase>generate-sources</phase>-->
+<!--                        <configuration>-->
+<!--                            <workingDirectory>src/main/resources/iscs-fe</workingDirectory>-->
+<!--                            <executable>ng</executable>-->
+<!--                            <arguments>-->
+<!--                                <argument>build</argument>-->
+<!--                                <argument>&#45;&#45;base-href=/ngfirst/ng/</argument>-->
+<!--                            </arguments>-->
+<!--                        </configuration>-->
 <!--                        <goals>-->
 <!--                            <goal>exec</goal>-->
 <!--                        </goals>-->
 <!--                    </execution>-->
 <!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <executable>ng</executable>-->
-<!--                    <workingDirectory>src/main/resources/iscs-fe</workingDirectory>-->
-<!--                    <arguments>-->
-<!--                        <argument>build</argument>-->
-<!--                    </arguments>-->
-<!--                </configuration>-->
 <!--            </plugin>-->
+
+
         </plugins>
     </build>
 

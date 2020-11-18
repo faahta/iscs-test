@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IscsFe</title>
+  <base href="/ngfirst/ng/">  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <style>
+
+    section {
+      padding: 60px 0;
+    }
+
+    section .section-title {
+      text-align: center;
+      color: #007b5e;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+    #tabs{
+      background: #007b5e;
+      color: #eee;
+    }
+    #tabs h6.section-title{
+      color: #eee;
+    }
+
+    #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+      color: #f3f3f3;
+      background-color: transparent;
+      border-color: transparent transparent #f3f3f3;
+      border-bottom: 4px solid !important;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #tabs .nav-tabs .nav-link {
+      border: 1px solid transparent;
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+      color: #eee;
+      font-size: 20px;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 767px) {
+
+      .card-container > *:not(.circle-link) ,
+      .terminal {
+        width: 100%;
+      }
+
+      .card:not(.highlight-card) {
+        height: 16px;
+        margin: 8px 0;
+      }
+
+      .card.highlight-card span {
+        margin-left: 72px;
+      }
+
+      svg#rocket-smoke {
+        right: 120px;
+        transform: rotate(-5deg);
+      }
+    }
+
+    @media screen and (max-width: 575px) {
+      svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body>
+  <app-root></app-root>
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
+</html>
