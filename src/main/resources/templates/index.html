@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Test</title>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<style>
+		section {
+			padding: 60px 0;
+		}
+		
+		section .section-title {
+			text-align: center;
+			color: #007b5e;
+			margin-bottom: 50px;
+			text-transform: uppercase;
+		}
+		#tabs{
+			background: #007b5e;
+			color: #eee;
+		}
+		#tabs h6.section-title{
+			color: #eee;
+		}
+		
+		#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+			color: #f3f3f3;
+			background-color: transparent;
+			border-color: transparent transparent #f3f3f3;
+			border-bottom: 4px solid !important;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		#tabs .nav-tabs .nav-link {
+			border: 1px solid transparent;
+			border-top-left-radius: .25rem;
+			border-top-right-radius: .25rem;
+			color: #eee;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+<section id="tabs">
+	<div class="container">
+		<h6 class="section-title h1">ISCS TEST</h6>
+		<div class="row">
+			<div class="col-xs-12 ">
+				<nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+						<a class="nav-item nav-link" id="nav-weather-tab" data-toggle="tab" href="#nav-weather" role="tab" aria-controls="nav-weather" aria-selected="false">Weather</a>
+						<a class="nav-item nav-link" id="nav-football-tab" data-toggle="tab" href="#nav-football" role="tab" aria-controls="nav-football" aria-selected="false">Foot ball</a>
+					</div>
+				</nav>
+				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						All weather data
+						
+						<form action="#" th:action="@{/v1/weather/all}" th:object="${weather}" method="get">
+							<input type="text" th:field="*{weather}" />
+							<input type="submit" />
+						</form>
+						
+					</div>
+					<div class="tab-pane fade" id="nav-weather" role="tabpanel" aria-labelledby="nav-weather-tab">
+						Weather
+					</div>
+					<div class="tab-pane fade" id="nav-football" role="tabpanel" aria-labelledby="nav-football-tab">
+						Football
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>

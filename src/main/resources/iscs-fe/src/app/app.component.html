@@ -1,0 +1,153 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+
+</head>
+<body>
+  <section id="tabs">
+    <div class="container">
+      <h6 class="section-title h1">ISCS TEST</h6>
+      <div class="row">
+        <div class="col-xs-12 ">
+          <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+              <a class="nav-item nav-link" id="nav-weather-tab" data-toggle="tab" href="#nav-weather" role="tab" aria-controls="nav-weather" aria-selected="false">Weather</a>
+              <a class="nav-item nav-link" id="nav-football-tab" data-toggle="tab" href="#nav-football" role="tab" aria-controls="nav-football" aria-selected="false">Foot ball</a>
+            </div>
+          </nav>
+
+
+          <!------------------------------HOME TAB------------------------------>
+          <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <h4>All weather data</h4>
+              <br/>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th scope="col">GIORNO</th>
+                  <th scope="col">MAX TEMP</th>
+                  <th scope="col">MIN TEMP</th>
+                  <th scope="col">AVG TEMP</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                  <th scope="col">-</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let r of weather; let i = index;">
+                  <td *ngFor="let c of weather[i]; let j=index1">{{c}}</td>
+                </tr>
+
+                </tbody>
+              </table>
+              <hr/>
+              <h4>All Football data</h4>
+              <br/>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th scope="col">TEAM ID</th>
+                  <th scope="col">TEAM NAME</th>
+                  <th scope="col">P</th>
+                  <th scope="col">W</th>
+                  <th scope="col">L</th>
+                  <th scope="col">D</th>
+                  <th scope="col">Goal Scored</th>
+                  <th scope="col"></th>
+                  <th scope="col">Goal conceded</th>
+                  <th scope="col">PTS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let r of team; let i = index;">
+                  <td *ngFor="let c of team[i]; let j=index1">{{c}}</td>
+                </tr>
+
+                </tbody>
+              </table>
+
+
+            </div>
+
+            <!------------------------------WEATHER TAB------------------------------>
+            <div class="tab-pane fade" id="nav-weather" role="tabpanel" aria-labelledby="nav-weather-tab">
+              <button type="button" class="btn btn-primary" (click)="getSmallestTempRange()">GET SMALLEST TEMP RANGE</button>
+              <br/>
+              <table class="table" *ngIf="showResult1">
+                <thead>
+                <tr>
+                  <th scope="col">GIORNO</th>
+                  <th scope="col">MAX</th>
+                  <th scope="col">MIN</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr >
+
+                  <td >{{smallestRangeWeather.giorno}}</td>
+                  <td >{{smallestRangeWeather.max}}</td>
+                  <td >{{smallestRangeWeather.min}}</td>
+
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <!------------------------------FOOTBALL TAB------------------------------>
+            <div class="tab-pane fade" id="nav-football" role="tabpanel" aria-labelledby="nav-football-tab">
+              <button type="button" class="btn btn-primary" (click)="getSmallestGoalDiff()">GET SMALLEST GOAL RANGE</button>
+
+              <table class="table" *ngIf="showResult2">
+                <thead>
+                <tr>
+                  <th scope="col">TEAM ID</th>
+                  <th scope="col">TEAM NAME</th>
+                  <th scope="col">P</th>
+                  <th scope="col">W</th>
+                  <th scope="col">L</th>
+                  <th scope="col">D</th>
+                  <th scope="col">Goal Scored</th>
+                  <th scope="col">Goal conceded</th>
+                  <th scope="col">PTS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr >
+
+                  <td >{{smallestGoalDiff.teamId}}</td>
+                  <td >{{smallestGoalDiff.teamName}}</td>
+                  <td >{{smallestGoalDiff.p}}</td>
+                  <td >{{smallestGoalDiff.w}}</td>
+                  <td >{{smallestGoalDiff.l}}</td>
+                  <td >{{smallestGoalDiff.d}}</td>
+                  <td >{{smallestGoalDiff.f}}</td>
+                  <td >{{smallestGoalDiff.a}}</td>
+                  <td >{{smallestGoalDiff.pts}}</td>
+                </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+<router-outlet></router-outlet>
