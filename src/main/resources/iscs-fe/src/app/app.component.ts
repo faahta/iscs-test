@@ -8,11 +8,11 @@ import {IscsService} from './service/iscs.service';
 })
 export class AppComponent implements OnInit {
   title = 'iscs-fe';
-  weather: Object;
-  smallestRangeWeather: Object;
+  weather: any;
+  smallestRangeWeather: any;
 
-  team: Object;
-  smallestGoalDiff: Object;
+  team: any;
+  smallestGoalDiff: any;
 
   showResult1: boolean = false;
   showResult2: boolean = false;
